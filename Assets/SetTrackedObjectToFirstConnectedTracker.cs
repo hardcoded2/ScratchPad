@@ -7,13 +7,14 @@ using Valve.VR;
 [RequireComponent(typeof(SteamVR_TrackedObject))]
 public class SetTrackedObjectToFirstConnectedTracker : MonoBehaviour
 {
-    private HashSet<int> knownTrackerIDs;
+    private List<int> knownTrackerIDs;
+    [SerializeField] private int TrackerIndexToSelect; //0 for the first, 1 for the second
     private SteamVR_TrackedObject.EIndex SelectedEIndex = SteamVR_TrackedObject.EIndex.None;
     private SteamVR_TrackedObject _trackedObject;
     public void OnEnable()
     {
         _trackedObject = GetComponent<SteamVR_TrackedObject>();
-        knownTrackerIDs = new HashSet<int>();
+        knownTrackerIDs = new List<int>();
         SteamVR_Events.DeviceConnected.Listen(OnDeviceConnected);
     }
     
@@ -64,6 +65,5 @@ public class SetTrackedObjectToFirstConnectedTracker : MonoBehaviour
             }
             
         }
-        
     }
 }
