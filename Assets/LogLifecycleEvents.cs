@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LogLifecycleEvents
 {
-    [RuntimeInitializeOnLoadMethod]
+    //[RuntimeInitializeOnLoadMethod]
     public static void SetupLogging()
     {
         var go = new GameObject("LifecycleEvents");
