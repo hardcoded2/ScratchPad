@@ -21,7 +21,7 @@ public class SetTrackedObjectToSpecifiedTrackerNumber : MonoBehaviour
 
     private void OnTrackerIndexUpdatedAsEIndex(IReadOnlyList<int> activeTrackers)
     {
-        if (activeTrackers.Count < TrackerIndexToSelect) //not enough active trackers
+        if (activeTrackers.Count <= TrackerIndexToSelect) //not enough active trackers
         {
             if (SelectedEIndex != SteamVR_TrackedObject.EIndex.None)
             {

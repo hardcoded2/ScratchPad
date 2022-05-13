@@ -38,6 +38,7 @@ public class VirtualTrackerIndexManager : MonoBehaviour
                 Debug.LogWarning("Double added a tracker");
             }
         }
+        Debug.Log($"Number of trakcers:{knownTrackerIDs.Count}");
         OnTrackerIndexUpdatedAsEIndex.Invoke(knownTrackerIDs);
     }
 }
